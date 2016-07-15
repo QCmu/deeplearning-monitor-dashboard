@@ -70,10 +70,10 @@ body {
   padding-left: 20px;
   margin-left: 0px;
 }
-.nav-tab > .active >a, .nav-tab > .active >a:hover,
+.nav-tab >li>a:hover, .nav-tab > .active >a, .nav-tab > .active >a:hover,
  .nav-tab > .active >a:focus{
   color: #19aa8d;
-  text-decoration: u
+  border-left: 4px solid #19aa8d;
 }
 
 .nav-sidebar > .active > a,
@@ -252,4 +252,16 @@ a.curent{
 
 .ds-panel > .panel-body >  .row{
   min-height: 240px;
+}
+
+.small-tip{
+  border-radius: 4px;
+  color: #fff;
+  background-color: #19aa8d;
+ padding: 3px 8px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42857143;
 }
