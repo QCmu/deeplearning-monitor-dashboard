@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Monitor for Admin</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="js/My97DatePicker/WdatePicker.js"></script>
+    <script type='text/javascript'>
+    $(document).ready(function() {
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+});
+  </script>
+
+</head>
+<body>
+
+    <nav class="mn-navbar navbar navbar-inverse navbar-fixed-top ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h1 class="pull-left">Monitor Dashboard <span class="small-tip">Administration View</span></h1>
+        </div>
+        
+        <div class="user-info" class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://9.186.106.233:8000/bigdata_test/project/">主页</a></li>
+            <li><a class="block text-xs text-muted">用户蓝点：</a></li>
+            <li><a class="dropdown-toggle count-info" data-toggle="dropdown"  href="#"><i class="fa fa-language"></i>语言</a>
+            <ul class="dropdown-menu dropdown-alerts">
+            <li><a class="btn btn-outline btn-link openstack-spin" href="#" onclick="set_en();">EN</a></li>
+            <li><a class="btn btn-outline btn-link openstack-spin" href="#" onclick="set_cn();">CN</a></li>
+            </ul>
+            </li>
+            <li><a href=""><i class="fa fa-road"></i> VPN</a></li>
+            <li><a href="" text-muted><i class="fa fa-bell"></i></a> </li>
+            <li>
+            <a href=""><i class="fa fa-sign-out"></i>退出</a>
+            </li>
+
+            </ul>
+        </div>
+      </div>
+    </nav>
+  
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="#">Cluster</a></li>
+            <li><a href="#">File System</a></li>
+            <li class="active"><a href="#">Monitor </a>
+                <ul class="nav nav-tab ">
+                    <li ><a href="admin-index.html">Host View</a></li>
+                    <li class="active"><a href="admin-cluster.html" >Cluster View</a></li>
+                </ul>
+            </li>
+            
+          </ul>
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="row">
+               <ol class="breadcrumb">
+               <li><a href="#">Cluster View</a></li>
+                <li><a class="curent">Cluster List</a></li>
+                </ol>
+           </div>
+
+            <div class="row ds-page-nav">
+                <h3>Cluster List</h3> 
+                <div class="static-tooltip tooltip right" role="tooltip">
+                    <div class="tooltip-arrow"></div>
+                    <div class="tooltip-inner">
+                    Click on Each Application to See the Optimization Suggestions!
+                    </div>
+                </div>
+                <form class="navbar-form navbar-right">
+                    <label>Start:</label>
+                    <input type="text" id="begin" onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd HH:mm:ss&#39;})" ondblclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd HH:mm:ss&#39;})" onblur="control.validateTime(this)">
+                    <label>End:</label>
+                    <input type="text" id="end" onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd HH:mm:ss&#39;})" ondblclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd HH:mm:ss&#39;})" onblur="control.validateTime(this)">
+                    <button type="button" class="btn btn-info btn-xs" ng-click="search()"><i class="fa fa-filter" aria-hidden="true"></i>  Time Filter</button>
+                </form>
+            </div>
+
+          <div class="table-responsive">
+            <table class="table table-striped table-list">
+              <thead>
+                <tr>
+                  
+                  <th>Application</th>
+                  <th>Type</th>
+                  <th>Trainning or Deployed</th>
+                  <th>GPU used</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="admin-cluster-detail.html" >Host1</a></td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td><a href="admin-cluster-detail.html">Host2</a></td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                  
+                </tr>
+                <tr>
+                  <td><a href="admin-cluster-detail.html">Host3</a></td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                  
+                </tr>
+                <tr>
+                  <td><a href="admin-cluster-detail.html">Host3</a></td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                  
+                </tr>
+                <tr>
+                  <td><a href="admin-cluster-detail.html">Host4</a></td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                  
+                </tr>
+                <tr>
+                  <td><a href="admin-cluster-detail.html">Host5</a></td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                  
+                </tr>
+                <tr>
+                  <td><a href="admin-cluster-detail.html">Host6</a></td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                  
+                </tr>
+                <tr>
+                  <td><a href="admin-cluster-detail.html">Host7</a></td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>sit</td>
+                  <td>Praesent</td>
+                  
+                </tr>
+                <tr>
+                  <td><a href="admin-cluster-detail.html">Host8</a></td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td>sed</td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
